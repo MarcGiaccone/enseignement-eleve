@@ -46,7 +46,7 @@
   <h3>Ce qu'il vous faut</h3>
   <ul>
     <li>un ordinateur Windows avec un navigateur ;</li>
-    <li>le logiciel <strong>ExifTool GUI</strong>, qui sert à lire les informations cachées dans une photo. Il se trouve dans : <code>[À COMPLÉTER PAR LE PROFESSEUR]</code> ;</li>
+    <li>le site <strong><a href="https://exiftools.com/" target="_blank" rel="noopener">exiftools.com</a></strong>, qui sert à lire les informations cachées dans une photo (il faut une connexion internet) ;</li>
     <li>une feuille à part pour vos réponses.</li>
   </ul>
   <h3>Votre feuille de notes</h3>
@@ -84,18 +84,21 @@
   <h2><span class="numero">2</span> Lire les métadonnées</h2>
   <p class="duree">20 minutes</p>
   <p>Un fichier photo ne contient pas seulement des pixels. L'appareil y écrit aussi, automatiquement, des informations cachées : les <strong>métadonnées</strong> (format <strong>EXIF</strong>). On y trouve la date, le modèle de téléphone, la position GPS, et parfois le nom de l'auteur.</p>
-  <p>Windows en affiche une partie, mais on ne peut pas les copier. Vous allez donc utiliser <strong>ExifTool GUI</strong>.</p>
-  <h3>Ouvrir la photo dans ExifTool GUI</h3>
+  <p>Windows en affiche une partie, mais on ne peut pas les copier. Vous allez donc utiliser le site <strong><a href="https://exiftools.com/" target="_blank" rel="noopener">exiftools.com</a></strong>, qui les affiche toutes.</p>
+  <h3>Ouvrir la photo dans exiftools.com</h3>
   <ol>
-    <li>Lancez <strong>ExifTool GUI</strong> (le dossier est indiqué au début du TP).</li>
-    <li>Dans l'arborescence de gauche, ouvrez votre dossier <code>TP_SNT</code> : la photo apparaît dans la liste.</li>
-    <li>Cliquez sur <code>photo_1.jpg</code>. Les métadonnées s'affichent à droite, avec des noms en anglais.</li>
+    <li>Ouvrez <strong><a href="https://exiftools.com/" target="_blank" rel="noopener">exiftools.com</a></strong> dans un nouvel onglet.</li>
+    <li>Glissez <code>photo_1.jpg</code> depuis votre dossier <code>TP_SNT</code> dans la zone <strong>Upload files</strong> (ou cliquez dans la zone et choisissez le fichier).</li>
+    <li>Le site affiche d'abord un résumé. Plus bas, sous <strong>Full Metadata</strong>, cliquez sur <kbd>Expand All</kbd> puis ouvrez la rubrique <strong>EXIF</strong> : toutes les métadonnées s'affichent, avec des noms en anglais.</li>
   </ol>
+  <div class="cadre alerte">
+    <p>En envoyant une photo sur ce site, vous la confiez à un service extérieur. C'est sans risque ici parce que la photo est fictive. <strong>Ne le faites jamais avec une vraie photo de vous ou de vos proches.</strong></p>
+  </div>
   <div class="cadre">
     <p>Ne confondez pas la date de prise de vue avec la <strong>date de modification du fichier</strong> (<code>FileModifyDate</code>). Cette dernière dépend de votre ordinateur, pas de l'appareil photo.</p>
   </div>
   <h3>Relever les informations</h3>
-  <p>Recopiez ce tableau sur votre feuille et complétez-le <strong>uniquement</strong> avec ce que vous trouvez dans ExifTool GUI. Écrivez « rien » quand un champ n'existe pas.</p>
+  <p>Recopiez ce tableau sur votre feuille et complétez-le <strong>uniquement</strong> avec ce que vous trouvez dans la rubrique EXIF du site. Écrivez « rien » quand un champ n'existe pas.</p>
   <table>
     <thead><tr><th>Information</th><th>Nom en anglais dans l'outil</th><th>Valeur trouvée</th></tr></thead>
     <tbody>
@@ -112,7 +115,7 @@
   </table>
   <details>
     <summary>Indice : je ne trouve pas un champ</summary>
-    <p>La liste est longue et classée par groupes (EXIF, GPS, XMP, fichier...). Si l'outil propose plusieurs affichages, choisissez celui qui montre <strong>toutes</strong> les informations.</p>
+    <p>La liste est longue et classée par groupes (EXIF, Composite, File...). Si vous ne voyez que quelques lignes, cliquez sur <kbd>Expand All</kbd> pour afficher <strong>toutes</strong> les informations de la rubrique EXIF.</p>
     <p>Les noms sont en anglais et collés : <code>Artist</code> veut dire auteur. Un champ vide n'apparaît pas dans la liste : notez « rien ».</p>
   </details>
   <h3>Questions</h3>
@@ -124,15 +127,15 @@
 <section class="etape" id="e3">
   <h2><span class="numero">3</span> Localiser</h2>
   <p class="duree">15 minutes</p>
-  <p>Les champs <code>GPSLatitude</code> et <code>GPSLongitude</code> donnent la position exacte de l'appareil au moment de la photo. Inutile de les recopier : ExifTool GUI les place directement sur une carte.</p>
+  <p>Les champs <code>GPSLatitude</code> et <code>GPSLongitude</code> donnent la position exacte de l'appareil au moment de la photo. Inutile de les recopier : le site les place directement sur une carte.</p>
   <ol>
-    <li>Sélectionnez <code>photo_1.jpg</code> dans ExifTool GUI.</li>
-    <li>Ouvrez l'onglet <strong>GoogleMap</strong>, puis cliquez sur <strong>Montrer sur la carte</strong>.</li>
-    <li>Zoomez jusqu'à reconnaître les bâtiments et les rues.</li>
+    <li>Gardez <code>photo_1.jpg</code> ouverte sur exiftools.com.</li>
+    <li>Dans le résumé, repérez la carte <strong>GPS Location</strong> : un repère indique où la photo a été prise. Le site affiche aussi les coordonnées et l'adresse la plus proche.</li>
+    <li>Zoomez sur la carte jusqu'à reconnaître les bâtiments et les rues. Le bouton <strong>Open in Google Maps</strong> ouvre la même position dans un autre site de cartes, au choix.</li>
   </ol>
   <details>
-    <summary>Indice : l'onglet n'apparaît pas ou la carte reste vide</summary>
-    <p>Appelez votre professeur. L'onglet carte doit être activé dans les préférences du logiciel, et le poste doit avoir accès à internet.</p>
+    <summary>Indice : je ne vois pas de carte</summary>
+    <p>Vérifiez que la photo est bien envoyée sur le site (<strong>Completed</strong>) et que le poste a accès à internet. La carte n'apparaît que si la photo contient une position GPS. Sinon, appelez votre professeur.</p>
   </details>
   <h3>Questions</h3>
   <p class="q"><strong>Q6.</strong> Quel lieu la carte indique-t-elle (nom, ville) ? Zoomez au maximum : le repère est-il sur un bâtiment, une rue, un parc, une place ?</p>
@@ -160,7 +163,7 @@
     <figcaption>Photo n° 2.</figcaption>
   </figure>
   <p><a class="bouton secondaire" href="images/photo_2.jpg" download="photo_2.jpg">Télécharger la photo n° 2</a></p>
-  <p class="aide">Même méthode qu'à l'étape 1 si le téléchargement ne démarre pas. Ouvrez-la ensuite dans ExifTool GUI et placez-la sur la carte.</p>
+  <p class="aide">Même méthode qu'à l'étape 1 si le téléchargement ne démarre pas. Envoyez-la ensuite sur exiftools.com de la même façon et regardez sa carte.</p>
   <p class="q"><strong>Q13.</strong> Cette photo n'a pas d'auteur dans ses métadonnées. Comment pouvez-vous pourtant être presque certains qu'elle vient de la même personne ? Donnez au moins deux éléments.</p>
   <details>
     <summary>Indice</summary>
@@ -182,7 +185,7 @@
     <li>Faites une <strong>copie</strong> de <code>photo_1.jpg</code> dans le même dossier (clic droit, copier, coller). Ne travaillez jamais sur votre seul exemplaire.</li>
     <li>Clic droit sur la copie, <kbd>Propriétés</kbd>, onglet <kbd>Détails</kbd>, puis le lien en bas <kbd>Supprimer les propriétés et les informations personnelles</kbd>.</li>
     <li>Choisissez <kbd>Créer une copie avec toutes les propriétés possibles supprimées</kbd>, puis <kbd>OK</kbd>.</li>
-    <li>Revenez dans ExifTool GUI, actualisez le dossier et ouvrez la nouvelle copie.</li>
+    <li>Revenez sur exiftools.com, cliquez sur <kbd>Clear All</kbd> pour vider la liste, puis envoyez la nouvelle copie.</li>
   </ol>
   <p class="q"><strong>Q16.</strong> Qu'est-ce qui a disparu des métadonnées ? Qu'est-ce qui reste ?</p>
   <div class="cadre">
@@ -213,7 +216,7 @@
 
 <footer class="pied">
   <p><strong>Situation fictive.</strong> Le personnage, le réseau Courseo, le club et les résultats sportifs sont inventés pour ce TP. Toute ressemblance avec une personne réelle est fortuite. Les métadonnées des deux images ont été écrites pour l'occasion.</p>
-  <p><strong>Crédits des photographies.</strong> Les deux photographies proviennent de Wikimedia Commons et sont diffusées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Photo n° 1 : [AUTEUR_PHOTO_1]. Photo n° 2 : [AUTEUR_PHOTO_2]. Les images ont été redimensionnées, leurs métadonnées d'origine ont été supprimées et remplacées par des métadonnées fictives pour ce TP. Les images modifiées restent sous la même licence.</p>
+  <p><strong>Crédits des photographies.</strong> Les deux photographies proviennent de Wikimedia Commons et sont diffusées sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Photo n° 1 : Txllxt TxllxT. Photo n° 2 : Valentinois26. Les images ont été redimensionnées, leurs métadonnées d'origine ont été supprimées et remplacées par des métadonnées fictives pour ce TP. Les images modifiées restent sous la même licence.</p>
   <p><strong>Programme.</strong> SNT (Seconde) : thèmes « La photographie numérique », « Localisation, cartographie et mobilité » et « Les réseaux sociaux ».</p>
 </footer>
 
