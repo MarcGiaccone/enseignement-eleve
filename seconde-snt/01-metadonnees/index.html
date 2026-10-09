@@ -92,7 +92,7 @@
     <li>Le site affiche d'abord un résumé. Plus bas, sous <strong>Full Metadata</strong>, cliquez sur <kbd>Expand All</kbd> puis ouvrez la rubrique <strong>EXIF</strong> : toutes les métadonnées s'affichent, avec des noms en anglais.</li>
   </ol>
   <div class="cadre alerte">
-    <p>En envoyant une photo sur ce site, vous la confiez à un service extérieur. C'est sans risque ici parce que la photo est fictive. <strong>Ne le faites jamais avec une vraie photo de vous ou de vos proches.</strong></p>
+    <p>En envoyant une photo sur ce site, vous la confiez à un service extérieur. Ici, aucun souci : la photo du TP est sous licence libre. <strong>Ne le faites jamais avec une photo de vous ou de vos proches.</strong></p>
   </div>
   <div class="cadre">
     <p>Ne confondez pas la date de prise de vue avec la <strong>date de modification du fichier</strong> (<code>FileModifyDate</code>). Cette dernière dépend de votre ordinateur, pas de l'appareil photo.</p>
@@ -121,7 +121,7 @@
   <h3>Questions</h3>
   <p class="q"><strong>Q3.</strong> Quel jour de la semaine correspond à la date de prise de vue ? (Aidez-vous d'un calendrier.) Quelle heure était-il ? Que faisait probablement la personne à ce moment-là ?</p>
   <p class="q"><strong>Q4.</strong> Reprenez votre pari de l'étape 1, lignes <strong>Quand</strong> et <strong>Qui</strong>. Qu'est-ce qui était juste ? Qu'est-ce que les métadonnées vous apprennent que l'image seule ne disait pas ?</p>
-  <p class="q"><strong>Q5.</strong> Quel champ vous donne un premier moyen de retrouver la personne qui a pris la photo ? Qu'allez-vous en faire à l'étape 4 ?</p>
+  <p class="q"><strong>Q5.</strong> Quel champ vous donne un premier moyen de retrouver la personne qui a pris la photo ?</p>
 </section>
 
 <section class="etape" id="e3">
@@ -131,21 +131,26 @@
   <ol>
     <li>Gardez <code>photo_1.jpg</code> ouverte sur exiftools.com.</li>
     <li>Dans le résumé, repérez la carte <strong>GPS Location</strong> : un repère indique où la photo a été prise. Le site affiche aussi les coordonnées et l'adresse la plus proche.</li>
-    <li>Zoomez sur la carte jusqu'à reconnaître les bâtiments et les rues. Le bouton <strong>Open in Google Maps</strong> ouvre la même position dans un autre site de cartes, au choix.</li>
+    <li>Zoomez sur la carte jusqu'à reconnaître les bâtiments et les rues.</li>
   </ol>
   <details>
-    <summary>Indice : je ne vois pas de carte</summary>
-    <p>Vérifiez que la photo est bien envoyée sur le site (<strong>Completed</strong>) et que le poste a accès à internet. La carte n'apparaît que si la photo contient une position GPS. Sinon, appelez votre professeur.</p>
+    <summary>Indice : je ne vois pas la carte</summary>
+    <p>Copiez la position dans Google Maps :</p>
+    <ol>
+      <li>Relevez dans la rubrique EXIF les champs <code>GPSLatitude</code>, <code>GPSLatitudeRef</code>, <code>GPSLongitude</code> et <code>GPSLongitudeRef</code>.</li>
+      <li>Ouvrez <a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Maps</a> dans un nouvel onglet.</li>
+      <li>Dans la barre de recherche, tapez la latitude puis la longitude, avec <code>°</code> à la place de <code>deg</code> et une lettre à la place du mot : <code>N</code> (North), <code>S</code> (South), <code>E</code> (East), <code>W</code> (West). Exemple : <code>48°51'29.6"N 2°17'40.2"E</code>.</li>
+    </ol>
   </details>
   <h3>Questions</h3>
-  <p class="q"><strong>Q6.</strong> Quel lieu la carte indique-t-elle (nom, ville) ? Zoomez au maximum : le repère est-il sur un bâtiment, une rue, un parc, une place ?</p>
-  <p class="q"><strong>Q7.</strong> Est-ce un lieu public ou privé ? Quelqu'un qui verrait seulement ce lieu saurait-il où la personne habite ? Pourquoi ?</p>
-  <p class="q"><strong>Q8.</strong> Dans la liste des métadonnées, repérez la latitude et la longitude. Que signifient les lettres qui les accompagnent ? Lequel des deux nombres indique la position nord-sud, lequel indique la position est-ouest ?</p>
+  <p class="q"><strong>Q6.</strong> Zoomez au maximum autour du repère. Où la photo a-t-elle été prise ? Répondez en une phrase : la ville, et le type d'endroit (parc, rue, place, cour d'immeuble...).</p>
+  <p class="q"><strong>Q7.</strong> Ce lieu est-il public ou privé ? Cela change-t-il le risque de publier cette photo ?</p>
+  <p class="q"><strong>Q8.</strong> Dans la rubrique EXIF, repérez <code>GPSLatitude</code> et <code>GPSLongitude</code>, puis les champs <code>GPSLatitudeRef</code> et <code>GPSLongitudeRef</code> qui les accompagnent. Lequel des deux nombres indique la position nord-sud, lequel la position est-ouest ? Que vous apprennent les deux champs <code>Ref</code> ?</p>
   <details>
     <summary>Indice</summary>
     <p>La <strong>latitude</strong> mesure la distance à l'équateur, vers le nord (N) ou le sud (S). La <strong>longitude</strong> mesure la distance au méridien de Greenwich, vers l'est (E) ou l'ouest (W).</p>
   </details>
-  <p class="q"><strong>Q9.</strong> Le GPS d'un téléphone est précis à quelques mètres. Est-ce suffisant pour dire où se tenait la personne ? Pour dire où elle habite ?</p>
+  <p class="q"><strong>Q9.</strong> Le GPS d'un téléphone est précis à quelques mètres. Cette position suffit-elle pour savoir où la personne habite ? Qu'est-ce qu'elle prouve avec certitude, et qu'est-ce qu'elle ne prouve pas ?</p>
 </section>
 
 <section class="etape" id="e4">
