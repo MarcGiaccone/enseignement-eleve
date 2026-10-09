@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Courseo (réseau fictif)</title>
+<link rel="stylesheet" href="../../assets/tp.css">
+<link rel="stylesheet" href="courseo.css">
+</head>
+<body class="courseo">
+<div class="bandeau-fictif"><strong>Réseau fictif</strong> créé pour un TP de SNT : aucune personne, aucun club et aucune course n'existent réellement.</div>
+<div class="page">
+  <div class="barre-reseau">
+    <a class="logo" href="courseo.html">Courseo</a>
+    <form class="recherche" id="recherche" role="search">
+      <input id="champ" type="search" placeholder="Rechercher un pseudo" aria-label="Rechercher un pseudo" autocomplete="off">
+      <button class="bouton" type="submit">Chercher</button>
+    </form>
+  </div>
+
+  <h1>Partagez vos sorties.</h1>
+  <p>Courseo, c'est le réseau des coureuses et des coureurs : publiez vos parcours, vos photos et vos chronos, retrouvez votre club et encouragez vos amis.</p>
+
+  <div class="message-vide" id="vide" role="status">
+    Aucun profil ne correspond à cette recherche. Vérifiez l'orthographe du pseudo que vous avez relevé (majuscules, chiffres, tirets du bas).
+  </div>
+
+  <article class="publication">
+    <header>Exemple de publication · @club_demo</header>
+    <p>Rendez-vous samedi pour la sortie du club. Pensez aux vestes réfléchissantes !</p>
+  </article>
+  <article class="publication">
+    <header>Exemple de publication · @trail_demo</header>
+    <p>Premier 15 km sans m'arrêter. Merci pour vos encouragements.</p>
+  </article>
+</div>
+
+<script>
+  // Recherche simplifiée : un seul profil fictif existe dans ce réseau.
+  document.getElementById("recherche").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var saisie = document.getElementById("champ").value.trim().toLowerCase().replace(/^@/, "");
+    var vide = document.getElementById("vide");
+    if (saisie === "dam_run26") {
+      window.location.href = "profil.html";
+    } else {
+      vide.classList.add("visible");
+    }
+  });
+</script>
+</body>
+</html>
