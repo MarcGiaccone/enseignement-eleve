@@ -26,7 +26,7 @@ OUTILS = Path(__file__).resolve().parent
 
 ATTRS_FIN = re.compile(r"\s*\{([^{}]*)\}\s*$")
 ATTR_ELEMENT = re.compile(r'(#[\w-]+|\.[\w-]+|[\w-]+="[^"]*"|[\w-]+=\S+)')
-NUM_QUESTION = re.compile(r"Q(\d+)\.")
+NUM_QUESTION = re.compile(r"(?:Q|Question )(\d+)\.")
 LIEN_EXTERNE = ("http://", "https://", "mailto:", "tel:", "#", "data:")
 
 

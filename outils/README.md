@@ -46,7 +46,7 @@ Les valeurs qui contiennent `:` doivent être entre guillemets.
 | Une étape sans numéro | `## Titre {.sans-numero}` |
 | Un identifiant d'ancre précis | `## Titre {#e3 duree="…"}` (sinon `e1`, `e2`…) |
 | Un sous-titre | `### Titre` |
-| Une question | un paragraphe qui commence par `**Q7.**` |
+| Une question | un paragraphe qui commence par `**Q7.**` ou `**Question 7.**` |
 | Un encadré d'alerte | `::: alerte` … `:::` |
 | Un encadré d'information | `::: cadre` … `:::` |
 | Un indice repliable | `::: indice Texte du bouton` … `:::` (sans texte : « Indice ») |
