@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{ titre }}</title>
+<link rel="stylesheet" href="{{ assets }}tp.css">
+</head>
+<body>
+<div class="page">
+
+<header class="entete">
+  <p class="surtitre">{{ surtitre }}</p>
+  <h1>{{ titre_h1 }}</h1>
+{% if intro %}
+  <p>{{ intro | safe }}</p>
+{% endif %}
+{% if meta %}
+  <ul class="meta">
+{% for m in meta %}
+    <li>{{ m }}</li>
+{% endfor %}
+  </ul>
+{% endif %}
+</header>
+
+<nav class="plan" aria-label="Plan du TP">
+  <strong>Plan</strong>
+  <ol>
+{% for etape in plan %}
+    <li><a href="#{{ etape.id }}">{{ etape.titre | safe }}</a></li>
+{% endfor %}
+  </ol>
+</nav>
+
+{{ corps | safe }}
+{% if pied %}
+<footer class="pied">
+{% for paragraphe in pied %}
+  <p>{{ paragraphe | safe }}</p>
+{% endfor %}
+</footer>
+{% endif %}
+
+</div>
+<script src="{{ assets }}tp.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{ titre }}</title>
+<link rel="stylesheet" href="{{ assets }}tp.css">
+</head>
+<body>
+<div class="page">
+{% if retour %}
+<p class="aide"><a href="{{ retour }}">← Accueil</a></p>
+{% endif %}
+<header class="entete">
+  <h1>{{ titre }}</h1>
+{% if intro %}
+  <p>{{ intro }}</p>
+{% endif %}
+</header>
+{% if cartes %}
+<ul class="cartes">
+{% for carte in cartes %}
+  <li><a class="carte" href="{{ carte.href }}"><strong>{{ carte.titre }}</strong>{% if carte.detail %}<span>{{ carte.detail }}</span>{% endif %}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>Aucune activité pour l'instant.</p>
+{% endif %}
+</div>
+</body>
+</html>

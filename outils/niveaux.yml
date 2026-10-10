@@ -1,0 +1,13 @@
+# Niveaux affichés sur le site. L'ordre est celui de la page d'accueil.
+titre: Cours et TP
+intro: Choisis ton niveau.
+niveaux:
+  - dossier: seconde-snt
+    titre: Seconde — SNT
+    detail: Sciences numériques et technologie
+  - dossier: premiere-sti2d
+    titre: Première — STI2D
+    detail: TD et TP
+  - dossier: terminale-sti2d
+    titre: Terminale — STI2D
+    detail: TD et TP

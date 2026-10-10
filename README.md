@@ -1,22 +1,25 @@
 # Enseignement — version élève (public)
 
-Cours, TD et TP pour les élèves. Ce dépôt est **public** : il ne doit contenir aucun corrigé ni donnée personnelle.
+Cours, TD et TP pour les élèves. Ce dépôt est **public** : il ne doit contenir aucun corrigé ni donnée personnelle. Les corrigés sont dans le dépôt privé `enseignement-prof`.
 
-Le site est publié avec GitHub Pages. Les élèves ouvrent simplement le lien d'une activité, sans compte.
+Le site est généré à partir des fichiers Markdown et publié avec GitHub Pages à chaque push. Les élèves ouvrent simplement le lien d'une activité, sans compte.
 
 ## Arborescence
 
 ```
-index.html          accueil du site
+assets/             gabarit visuel commun (tp.css, tp.js)
+outils/             script de génération, modèles HTML, guide d'écriture
 seconde-snt/        SNT, seconde
 premiere-sti2d/     STI2D, première
 terminale-sti2d/    STI2D, terminale
 ```
 
-Chaque activité a son sous-dossier, numéroté : `seconde-snt/01-titre-court/index.html`.
+Chaque activité est un sous-dossier numéroté contenant `tp.md` et `ressources/`, par exemple `seconde-snt/01-metadonnees/`.
 
 ## Ajouter une activité
 
-1. Créer `<niveau>/NN-titre-court/` avec un `index.html` et ses ressources.
-2. Ajouter un lien vers l'activité dans `<niveau>/index.html`.
-3. Vérifier qu'aucun corrigé n'est inclus, puis commit et push.
+1. Créer `<niveau>/NN-titre-court/tp.md` et `<niveau>/NN-titre-court/ressources/`.
+2. Écrire le déroulé en Markdown : voir [outils/README.md](outils/README.md).
+3. Commit et push : la page est générée et publiée automatiquement.
+
+Les pages d'accueil et les pages de niveau sont générées aussi : il n'y a rien à y ajouter à la main.
