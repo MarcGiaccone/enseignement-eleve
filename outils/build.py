@@ -135,7 +135,7 @@ def preparer(md, jetons, env, dossier):
             ids.add(ident)
             jeton.meta = {"id": ident, "duree": valeurs.get("duree"), "numero": numero if numerote else None}
             titre = md.renderer.renderInline(inline.children, md.options, env)
-            etapes.append({"id": ident, "titre": titre})
+            etapes.append({"id": ident, "titre": titre, "numero": numero if numerote else None})
 
         elif jeton.type == "paragraph_open" and not jeton.hidden:
             inline = jetons[i + 1]

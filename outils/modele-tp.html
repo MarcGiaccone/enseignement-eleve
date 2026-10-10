@@ -27,11 +27,11 @@
 
 <nav class="plan" aria-label="Plan du TP">
   <strong>Plan</strong>
-  <ol>
+  <ul>
 {% for etape in plan %}
-    <li><a href="#{{ etape.id }}">{{ etape.titre | safe }}</a></li>
+    <li{% if not etape.numero %} class="groupe"{% endif %}><a href="#{{ etape.id }}">{% if etape.numero %}<span class="n">{{ etape.numero }}</span>{% endif %}<span>{{ etape.titre | safe }}</span></a></li>
 {% endfor %}
-  </ol>
+  </ul>
 </nav>
 
 {{ corps | safe }}
