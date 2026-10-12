@@ -21,7 +21,7 @@ pied:
 
 **Travail à rendre** : un dossier zip nommé `NOM1_NOM2_retouche_photo` contenant :
 
-- un document Word avec les réponses aux questions ;
+- un document Word avec les réponses aux questions `NOM1_NOM2_reponses.docx` ;
 - le fichier `NOM1_NOM2_horizon.jpg`, réalisé durant la partie 1 ;
 - le fichier `NOM1_NOM2_renard.jpg`, réalisé durant la partie 2 ;
 - (bonus) le fichier `NOM1_NOM2_mon_aquarelle.jpg`, réalisé durant le défi.
@@ -160,11 +160,12 @@ On a vu précédemment que la réduction du nombre de couleurs fait apparaître 
 
 Ton image a maintenant un aspect de peinture, mais ses couleurs sont encore vives, comme sur la photo d'origine. On veut maintenant s'approcher d'une aquarelle, une peinture à l'eau qui a des couleurs claires et peu intenses. Pour les obtenir, on va utiliser deux réglages qui n'ont rien à voir avec le nombre de couleurs.
 
-1. Ouvre _Couleurs > Teinte-Saturation_.
-2. Teste chaque curseur **séparément**, en regardant l'aperçu :
+1. Repasse en mode RGB en cliquant sur _Image > Mode > RGB_. Cela permettra de ne plus être limité par la palette de 32 couleurs.
+2. Ouvre _Couleurs > Teinte-Saturation_.
+3. Teste chaque curseur **séparément**, en regardant l'aperçu :
    - **Saturation** vers la gauche (valeurs négatives)
    - **Luminosité** vers la droite (valeurs positives)
-3. Règle ensuite les deux ensemble pour obtenir des couleurs pastel (recommandations : saturation entre -30 et -50, luminosité entre +15 et +30).
+4. Règle ensuite les deux ensemble pour obtenir des couleurs pastel (recommandations : saturation entre -30 et -50, luminosité entre +15 et +30).
 
 **Question 17.** Que fait le curseur de **saturation** ? Avant de tester, prédis ce qui se passe à -100, puis vérifie.
 
