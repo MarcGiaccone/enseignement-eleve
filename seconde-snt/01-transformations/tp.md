@@ -150,7 +150,7 @@ On a vu précédemment que la réduction du nombre de couleurs fait apparaître 
 
 1. _Image > Mode > Couleurs indexées…_
 2. Choisis **« Générer une palette optimale »**.
-3. Mets le **nombre maximal de couleurs** à **16**.
+3. Mets le **nombre maximal de couleurs** à **32**.
 4. Dans **« Tramage des couleurs »**, choisis **« Aucun »**.
 5. Clique sur **Convertir**.
 
