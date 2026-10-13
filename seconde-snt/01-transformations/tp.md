@@ -39,7 +39,7 @@ Télécharge l'image `horizon.jpg` :
 {.aide}
 Si l'image s'ouvre dans un onglet au lieu de se télécharger : fais un clic droit sur le bouton, puis <kbd>Enregistrer le lien sous…</kbd>.
 
-Ouvre-la ensuite dans GIMP (_Fichier > Ouvrir_).
+Ouvre-la ensuite dans GIMP (_Fichier > Ouvrir avec_). GIMP peut aussi s'appeler GNU Image Manipulation Program.
 
 **Question 1.** Cette photo a deux défauts. Lesquels ?
 
@@ -47,10 +47,13 @@ Ouvre-la ensuite dans GIMP (_Fichier > Ouvrir_).
 
 ## Redresser l'horizon
 
-1. Choisis l'**outil Mesure** dans le menu _Outils > Mesure_ (touche Maj+M).
-2. Clique sur un bout de l'horizon, maintiens et tire jusqu'à l'autre bout, puis relâche.
-3. Lis l'angle affiché en bas de la fenêtre.
-4. Clique sur le bouton **Redresser** dans les options de l'outil (barre verticale à gauche).
+L’horizon est une ligne horizontale qui semble séparer le ciel de la terre (ou de la mer). Dans notre image, cette ligne n’est pas à l’horizontale et donne cet effet de photo « penchée ».
+
+1. Repère l'horizon sur l'image.
+2. Choisis l'**outil Mesure** dans le menu _Outils > Mesure_ (touche Maj+M).
+3. Clique sur l’horizon, tout à gauche de l’image, **maintiens le bouton enfoncé et tire** en suivant l’horizon jusqu’au bord droit de l’image, puis relâche (on appelle ce geste un « cliquer-glisser »). Une ligne doit rester affichée sur l’horizon.
+4. Lis l'angle affiché en bas de la fenêtre.
+5. Clique sur le bouton **Redresser** dans les options de l'outil (barre verticale à gauche). Sur certaines versions de GIMP le bouton est mal traduit et peut s'appeler "Straighten".
 
 **Question 3.** Quel angle as-tu mesuré ?
 
@@ -59,7 +62,7 @@ Ouvre-la ensuite dans GIMP (_Fichier > Ouvrir_).
 ## Recadrer en 16:9
 
 1. Choisis l'**outil Découpage** dans le menu _Outils > Outils de transformation > Découpage_ (Maj+C).
-2. Dans les options de l'outil, à gauche, coche la case « Fixé », choisis « Proportions » dans la liste et inscris « 16:9 » dans le champ qui se trouve à la suite. Cela permet de forcer le format 16:9, qui est la norme mondiale pour la télévision HD, les moniteurs ou les plateformes vidéo comme YouTube.
+2. Dans les options de l'outil, à gauche, **coche la case** « Fixé », choisis « Proportions » dans la liste et inscris « 16:9 » dans le champ qui se trouve à la suite. Cela permet de forcer le format 16:9, qui est la norme mondiale pour la télévision HD, les moniteurs ou les plateformes vidéo comme YouTube.
 3. Trace un rectangle qui ne contient pas de **zone quadrillée** (ce quadrillage représente la transparence). Tu peux ajuster la taille du rectangle en cliquant sur les coins.
 4. Dans les options de l'outil, active les guides **« Règle des tiers »** (clique sur « Aucun guide » pour voir apparaître les options) et place l'horizon sur une des lignes horizontales.
 5. Appuie sur **Entrée** pour valider.
