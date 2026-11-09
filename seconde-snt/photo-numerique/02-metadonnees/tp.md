@@ -137,13 +137,7 @@ Copiez la position dans Google Maps :
 
 **Q7.** Ce lieu est-il public ou privé ? Cela change-t-il le risque de publier cette photo ?
 
-**Q8.** Dans la rubrique EXIF, repérez `GPSLatitude` et `GPSLongitude`, puis les champs `GPSLatitudeRef` et `GPSLongitudeRef` qui les accompagnent. Lequel des deux nombres indique la position nord-sud, lequel la position est-ouest ? Que vous apprennent les deux champs `Ref` ?
-
-::: indice
-La **latitude** mesure la distance à l'équateur, vers le nord (N) ou le sud (S). La **longitude** mesure la distance au méridien de Greenwich, vers l'est (E) ou l'ouest (W).
-:::
-
-**Q9.** Le GPS d'un téléphone est précis à quelques mètres. Cette position suffit-elle pour savoir où la personne habite ? Qu'est-ce qu'elle prouve avec certitude, et qu'est-ce qu'elle ne prouve pas ?
+**Q8.** Le GPS d'un téléphone est précis à quelques mètres. Cette position suffit-elle pour savoir où la personne habite ?
 
 ## Recouper les informations {duree="25 minutes"}
 
@@ -151,11 +145,11 @@ Une information seule est souvent banale. Ce qui devient dangereux, c'est de **c
 
 [Ouvrir le réseau Courseo (fictif)](ressources/courseo.html){.bouton target="_blank" rel="noopener"}
 
-**Q10.** Retrouvez le profil de l'auteur de la photo n° 1 (tapez son pseudo dans la recherche, avec les chiffres et les tirets du bas). Qu'apprenez-vous sur la personne : prénom, âge, ville, activités, habitudes ?
+**Q9.** Retrouvez le profil de l'auteur de la photo n° 1 (tapez son pseudo dans la recherche, avec les chiffres et les tirets du bas). Qu'apprenez-vous sur la personne : prénom, âge, ville, activités, habitudes ?
 
-**Q11.** Son nom de famille n'apparaît pas sur son profil, mais une de ses publications vous donne une piste. Retrouvez-le. Quel chemin avez-vous suivi ?
+**Q10.** Son nom de famille n'apparaît pas sur son profil, mais une de ses publications vous donne une piste. Retrouvez-le. Quel chemin avez-vous suivi ?
 
-**Q12.** La photo n° 1 est-elle cohérente avec ce que raconte le profil (jour, heure, lieu) ? Citez deux éléments.
+**Q11.** La photo n° 1 est-elle cohérente avec ce que raconte le profil (jour, heure, lieu) ? Citez deux éléments.
 
 ### La deuxième photo
 
@@ -168,15 +162,15 @@ Une autre photo a été publiée plus tard.
 {.aide}
 Même méthode qu'à l'étape 1 si le téléchargement ne démarre pas. Envoyez-la ensuite sur exiftools.com de la même façon et regardez sa carte.
 
-**Q13.** Cette photo n'a pas d'auteur dans ses métadonnées. Comment pouvez-vous pourtant être presque certains qu'elle vient de la même personne ? Donnez au moins deux éléments.
+**Q12.** Cette photo n'a pas d'auteur dans ses métadonnées. Comment pouvez-vous pourtant être presque certains qu'elle vient de la même personne ? Donnez au moins deux éléments.
 
 ::: indice
 Comparez avec la photo n° 1 : le modèle de téléphone, la version du logiciel, la position sur la carte, et la publication correspondante sur Courseo.
 :::
 
-**Q14.** Que vous apprend cette deuxième photo sur les habitudes de la personne ?
+**Q13.** Que vous apprend cette deuxième photo sur les habitudes de la personne ?
 
-**Q15.** La publication qui accompagne cette photo dit que la personne habite « à 5 minutes à pied » du lieu. Sur la carte, estimez la zone où elle habite. Pourriez-vous trouver son adresse exacte avec ces seules informations ? Et si elle publiait d'autres informations plus tard ?
+**Q14.** La publication qui accompagne cette photo dit que la personne habite « à 5 minutes à pied » du lieu. Sur la carte, estimez la zone où elle habite. Pourriez-vous trouver son adresse exacte avec ces seules informations ? Et si elle publiait d'autres informations plus tard ?
 
 ::: indice
 Un adulte marche environ 5 km/h. Combien de mètres parcourt-il en 5 minutes ? Utilisez l'échelle de la carte pour tracer ce rayon autour du lieu.
@@ -191,7 +185,7 @@ Heureusement, on peut nettoyer une photo avant de la partager.
 3. Choisissez <kbd>Créer une copie avec toutes les propriétés possibles supprimées</kbd>, puis <kbd>OK</kbd>.
 4. Revenez sur exiftools.com, cliquez sur <kbd>Clear All</kbd> pour vider la liste, puis envoyez la nouvelle copie.
 
-**Q16.** Qu'est-ce qui a disparu des métadonnées ? Qu'est-ce qui reste ?
+**Q15.** Qu'est-ce qui a disparu des métadonnées ? Qu'est-ce qui reste ?
 
 ::: cadre
 Ce nettoyage protège seulement **cette** copie. Un fichier déjà envoyé reste intact chez son destinataire. Une photo envoyée en « qualité originale » par e-mail ou messagerie garde en général ses métadonnées. Certains réseaux sociaux les retirent à la publication, mais ce n'est pas une règle générale. Et rien n'efface ce que l'image montre elle-même : un lieu reconnaissable, une personne.
@@ -199,7 +193,7 @@ Ce nettoyage protège seulement **cette** copie. Un fichier déjà envoyé reste
 
 ## Bilan à rendre {duree="15 minutes"}
 
-**Q17.** Sur votre feuille, reproduisez et complétez ce tableau avec toutes les informations que vous avez pu apprendre sur le personnage (au moins six lignes).
+**Q16.** Sur votre feuille, reproduisez et complétez ce tableau avec toutes les informations que vous avez pu apprendre sur le personnage (au moins six lignes).
 
 | Information retrouvée | D'où elle vient<br><small>(image, métadonnée, profil, autre page)</small> | Pourquoi c'est un risque |
 |---|---|---|
@@ -209,11 +203,11 @@ Ce nettoyage protège seulement **cette** copie. Un fichier déjà envoyé reste
 
 Puis répondez en quelques phrases.
 
-**Q18.** Aucune de ces informations n'est secrète à elle seule. Pourquoi, **mises ensemble**, permettent-elles d'identifier quelqu'un ?
+**Q17.** Aucune de ces informations n'est secrète à elle seule. Pourquoi, **mises ensemble**, permettent-elles d'identifier quelqu'un ?
 
-**Q19.** Quelles erreurs le personnage a-t-il commises ? Écrivez trois gestes concrets qu'il aurait dû faire pour se protéger.
+**Q18.** Quelles erreurs le personnage a-t-il commises ? Écrivez trois gestes concrets qu'il aurait dû faire pour se protéger.
 
-**Q20.** Quelles conséquences possibles pour lui, et pour ses proches ?
+**Q19.** Quelles conséquences possibles pour lui, et pour ses proches ?
 
 ::: cadre
 **Pour finir, sans rien montrer à personne.** Regardez dans les réglages de l'appareil photo de votre téléphone si la localisation est activée. Ce que vous y trouvez ne sera pas ramassé.
