@@ -5,6 +5,10 @@ niveaux:
   - dossier: seconde-snt
     titre: Seconde — SNT
     detail: Sciences numériques et technologie
+    themes:
+      - dossier: photo-numerique
+        titre: Photo numérique
+        detail: Retouche, métadonnées et vie privée
   - dossier: premiere-sti2d
     titre: Première — STI2D
     detail: TD et TP

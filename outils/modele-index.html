@@ -10,7 +10,7 @@
 <body>
 <div class="page">
 {% if retour %}
-<p class="aide"><a href="{{ retour }}">← Accueil</a></p>
+<p class="aide"><a href="{{ retour }}">← {{ retour_texte }}</a></p>
 {% endif %}
 <header class="entete">
   <h1>{{ titre }}</h1>
@@ -25,7 +25,7 @@
 {% endfor %}
 </ul>
 {% else %}
-<p>Aucune activité pour l'instant.</p>
+<p>{{ vide }}</p>
 {% endif %}
 </div>
 </body>

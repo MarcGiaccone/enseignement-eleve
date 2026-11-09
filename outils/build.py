@@ -226,10 +226,12 @@ def generer_activite(md, env_jinja, chemin_tp, racine_sortie):
     return {"href": dossier.name + "/", "titre": f"{dossier.name.split('-')[0]} — {donnees['titre']}", "detail": detail}
 
 
-def ecrire_index(env_jinja, chemin, assets, titre, intro, cartes, retour=None):
+def ecrire_index(env_jinja, chemin, assets, titre, intro, cartes, retour=None, retour_texte="Accueil",
+                 vide="Aucune activité pour l'instant."):
     chemin.parent.mkdir(parents=True, exist_ok=True)
     page = env_jinja.get_template("modele-index.html").render(
-        titre=titre, intro=intro, cartes=cartes, assets=assets, retour=retour)
+        titre=titre, intro=intro, cartes=cartes, assets=assets, retour=retour,
+        retour_texte=retour_texte, vide=vide)
     chemin.write_text(page, encoding="utf-8", newline="\n")
 
 
@@ -255,16 +257,33 @@ def main():
     erreurs = 0
     cartes_niveaux = []
     for niveau in config["niveaux"]:
-        cartes = []
-        for chemin_tp in sorted((RACINE / niveau["dossier"]).glob("*/tp.md")):
-            print(f"{chemin_tp.relative_to(RACINE)}")
-            try:
-                cartes.append(generer_activite(md, env_jinja, chemin_tp, sortie))
-            except ErreurTP as e:
+        themes = niveau.get("themes") or []
+        declares = {t["dossier"] for t in themes}
+        # Un tp.md hors d'un thème déclaré ne serait pas publié : on le signale.
+        for chemin_tp in sorted((RACINE / niveau["dossier"]).glob("**/tp.md")):
+            rel = chemin_tp.relative_to(RACINE / niveau["dossier"])
+            if len(rel.parts) != 3 or rel.parts[0] not in declares:
                 erreurs += 1
-                print(f"  ERREUR : {e}", file=sys.stderr)
+                print(f"{chemin_tp.relative_to(RACINE)}\n  ERREUR : TP hors d'un thème déclaré dans "
+                      f"niveaux.yml (attendu : {niveau['dossier']}/<thème>/NN-titre/tp.md)", file=sys.stderr)
+
+        cartes_themes = []
+        for theme in themes:
+            cartes = []
+            for chemin_tp in sorted((RACINE / niveau["dossier"] / theme["dossier"]).glob("*/tp.md")):
+                print(f"{chemin_tp.relative_to(RACINE)}")
+                try:
+                    cartes.append(generer_activite(md, env_jinja, chemin_tp, sortie))
+                except ErreurTP as e:
+                    erreurs += 1
+                    print(f"  ERREUR : {e}", file=sys.stderr)
+            ecrire_index(env_jinja, sortie / niveau["dossier"] / theme["dossier"] / "index.html", "../../assets/",
+                         theme["titre"], theme.get("detail", ""), cartes,
+                         retour="../", retour_texte=niveau["titre"])
+            cartes_themes.append({"href": theme["dossier"] + "/", "titre": theme["titre"], "detail": theme.get("detail", "")})
         ecrire_index(env_jinja, sortie / niveau["dossier"] / "index.html", "../assets/",
-                     niveau["titre"], niveau.get("detail", ""), cartes, retour="../")
+                     niveau["titre"], niveau.get("detail", ""), cartes_themes,
+                     retour="../", vide="Aucun thème pour l'instant.")
         cartes_niveaux.append({"href": niveau["dossier"] + "/", "titre": niveau["titre"], "detail": niveau.get("detail", "")})
     ecrire_index(env_jinja, sortie / "index.html", "assets/", config["titre"], config.get("intro", ""), cartes_niveaux)
 

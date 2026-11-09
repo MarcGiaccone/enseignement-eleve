@@ -3,12 +3,12 @@
 Un TP = un dossier avec un fichier `tp.md` et un dossier `ressources/`. À chaque push, la CI (`.github/workflows/pages.yml`) génère les pages avec `outils/build.py` et les publie sur GitHub Pages.
 
 ```
-seconde-snt/02-titre-court/
+seconde-snt/photo-numerique/02-titre-court/
 ├── tp.md             le déroulé
 └── ressources/       images, pages HTML, tout ce qui sert à faire le TP
 ```
 
-Le dossier `ressources/` est copié tel quel (les images ne sont pas retouchées, leurs métadonnées sont conservées). Une page HTML de `ressources/` appelle le gabarit par `../../../assets/tp.css`.
+Le dossier `ressources/` est copié tel quel (les images ne sont pas retouchées, leurs métadonnées sont conservées). Une page HTML de `ressources/` appelle le gabarit par `../../../../assets/tp.css`.
 
 ## Prévisualiser sur son PC
 
