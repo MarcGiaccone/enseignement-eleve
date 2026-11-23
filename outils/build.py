@@ -69,9 +69,18 @@ def creer_markdown():
         resume = jeton.info.strip().removeprefix("indice").strip() or "Indice"
         return f"<details>\n<summary>{html.escape(resume)}</summary>\n"
 
+    def checkpoint(self, tokens, idx, options, env):
+        jeton = tokens[idx]
+        if jeton.nesting == -1:
+            return "</div>\n"
+        numero = jeton.info.strip().removeprefix("checkpoint").strip()
+        titre = f"Checkpoint {numero}" if numero else "Checkpoint"
+        return f'<div class="checkpoint">\n<p class="checkpoint-titre">{html.escape(titre)}</p>\n'
+
     md.use(container_plugin, name="alerte", render=div("cadre alerte"))
     md.use(container_plugin, name="cadre", render=div("cadre"))
     md.use(container_plugin, name="indice", render=indice)
+    md.use(container_plugin, name="checkpoint", render=checkpoint)
 
     def ouvrir_etape(self, tokens, idx, options, env):
         jeton = tokens[idx]

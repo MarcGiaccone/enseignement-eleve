@@ -49,6 +49,9 @@ Les valeurs qui contiennent `:` doivent être entre guillemets.
 | Une question | un paragraphe qui commence par `**Q7.**` ou `**Question 7.**` |
 | Un encadré d'alerte | `::: alerte` … `:::` |
 | Un encadré d'information | `::: cadre` … `:::` |
+| Un checkpoint (l'élève appelle le professeur) | `::: checkpoint 1` … `:::` (le numéro est facultatif : sans lui, « Checkpoint ») |
+| Un bloc de code | clôture ```` ```python ```` … ```` ``` ```` |
+| Une image à sa taille naturelle, centrée | `![description](ressources/x.png "Légende"){.vignette}` seule sur sa ligne |
 | Un indice repliable | `::: indice Texte du bouton` … `:::` (sans texte : « Indice ») |
 | Une photo avec légende | `![description](ressources/images/a.jpg "Légende")` seul sur sa ligne |
 | Un bouton de téléchargement | `[Télécharger](ressources/images/a.jpg){.bouton download="a.jpg"}` |
