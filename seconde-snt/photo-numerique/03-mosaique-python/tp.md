@@ -98,7 +98,7 @@ Dans une image, chaque pixel a des coordonnées `(x, y)` :
 
 ### Le code
  
-**Comment :** avant de recopier le portrait, on apprend à colorier des pixels, étape par étape. À chaque étape, tu essaies, tu regardes ce qui se passe, puis on t'explique.
+Avant de recopier le portrait, on apprend à colorier des pixels, étape par étape. À chaque étape, tu essaies, tu regardes ce qui se passe, puis on t'explique.
  
 ::: alerte
 À chaque nouvelle étape, **remplace** le code de l'étape précédente. Garde toujours les lignes de la mise en route en haut, et `mosaique.show()` tout en bas.
@@ -143,8 +143,8 @@ Le décalage vers la droite (l'**indentation**) est obligatoire : il montre ce q
 - remplace le `50` par `150` : la ligne descend.
 **Et si on oublie `x` ?** Remplace `(x, 50)` par `(0, 0)` et exécute. On ne voit plus qu'un seul point dans le coin : l'ordinateur a colorié 200 fois **le même** pixel. Remets `(x, 50)`.
  
-::: alerte
-Dans une boucle, il faut écrire `x` (et `y`) dans les coordonnées, pas des nombres.
+::: cadre
+Dans une boucle, il faut utiliser `x` (et `y`) dans les coordonnées, pas directement des nombres.
 :::
  
 #### Étape 3 : voir les coordonnées défiler
