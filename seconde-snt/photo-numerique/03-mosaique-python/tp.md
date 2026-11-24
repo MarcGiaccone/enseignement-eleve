@@ -14,7 +14,7 @@ pied:
 
 ## Le but du TP {#but .sans-numero}
 
-Tu vas écrire un programme qui fabrique une mosaïque de 4 vignettes de 200 × 200 pixels. Avec des fonds de couleur, on obtient un effet façon **Andy Warhol**, l'artiste du pop art célèbre pour ses portraits répétés en couleurs vives.
+Tu vas écrire un programme qui fabrique une mosaïque de 4 **vignettes** de 200 × 200 pixels. Avec des fonds de couleur, on obtient un effet façon **Andy Warhol**, l'artiste du pop art célèbre pour ses portraits répétés en couleurs vives.
 
 ![Mosaïque de quatre vignettes : le portrait original en haut à gauche, son négatif en haut à droite, sa version en niveaux de gris en bas à gauche et son dessin au trait en bas à droite](ressources/images/resultat.png "Ce que tu vas obtenir : original, négatif, niveaux de gris, contours."){.vignette}
 
@@ -36,6 +36,11 @@ Tu réponds aux questions numérotées (**Question 1**, **Question 2**, etc.) su
 
 1. Ouvre **[Basthon](https://console.basthon.fr/?kernel=python)**.
 2. Télécharge le portrait : [portrait.png](ressources/portrait.png){.bouton download="portrait.png"}
+
+Basthon a deux zones. D'un côté, tu écris ton code. De l'autre, tu vois le résultat : soit l'image (la mosaique que tu vas créer), soit la console (affiche tes message "print()" et les erreurs) . Tu passes de l'une à l'autre avec les boutons 6 et 7.
+
+![Ecrans de Basthon : A gauche la zone de code, A droite l'image ou la console](ressources/images/basthon_ecrans.png "Les écrans de Basthon."){.vignette}
+
 3. Dans Basthon, clique sur le bouton <kbd>Ouvrir</kbd> (icône dossier) et choisis le fichier `portrait.png`. Un message confirme que le fichier est chargé.
 4. Dans la zone de code, recopie ces lignes :
 
@@ -68,7 +73,7 @@ Enregistre ton programme régulièrement avec le bouton <kbd>Télécharger</kbd>
 
 ## Copier l'original {#partie-1}
 
-**Ce qu'on va faire :** recopier le portrait, pixel par pixel, en haut à gauche de la mosaïque.
+**Objectif :** recopier le portrait, pixel par pixel, en haut à gauche de la mosaïque.
 
 ### Avant de coder
 
@@ -92,63 +97,109 @@ Dans une image, chaque pixel a des coordonnées `(x, y)` :
 **Question 3.** Le pixel `(50, 30)` du portrait doit être recopié dans chaque vignette. Où arrive-t-il dans la vignette originale ? Dans la vignette négatif ? Dans la vignette contours ?
 
 ### Le code
-
-**Comment :** pour chaque pixel du portrait, on fait deux choses :
-
-- on lit sa couleur dans le portrait ;
-- on écrit cette couleur au même endroit dans la mosaïque.
-
-#### En Python : lire et écrire un pixel
-
+ 
+**Comment :** avant de recopier le portrait, on apprend à colorier des pixels, étape par étape. À chaque étape, tu essaies, tu regardes ce qui se passe, puis on t'explique.
+ 
+::: alerte
+À chaque nouvelle étape, **remplace** le code de l'étape précédente. Garde toujours les lignes de la mise en route en haut, et `mosaique.show()` tout en bas.
+:::
+ 
+#### Étape 1 : colorier un pixel
+ 
+Recopie cette ligne au-dessus de `mosaique.show()` :
+ 
 ```python
-r, v, b = portrait.getpixel((10, 20))
+mosaique.putpixel((100, 50), (255, 0, 0))
 ```
-
-Cette ligne lit le pixel `(10, 20)` du portrait. Ses 3 composantes (rouge, vert, bleu) sont rangées dans trois variables : `r`, `v` et `b`. Une **variable** est une boîte qui porte un nom et qui contient une valeur.
-
-```python
-mosaique.putpixel((10, 20), (r, v, b))
-```
-
-Cette ligne écrit la couleur `(r, v, b)` au pixel `(10, 20)` de la mosaïque.
-
-#### En Python : la boucle
-
-Le portrait contient 200 × 200 pixels : on ne va pas écrire 40 000 lignes ! On utilise une **boucle**, qui répète des instructions.
-
+ 
+Clique sur **Exécuter**, puis sur **Image**. Regarde bien : il y a un tout petit point rouge. C'est **un pixel**.
+ 
+**Ce qui se passe :** `putpixel` colorie un pixel de la mosaïque. On lui dit **où**, avec `(100, 50)`, et **quelle couleur**, avec `(255, 0, 0)`, ici du rouge.
+ 
+**Essaie :**
+ 
+- remplace `(100, 50)` par `(300, 50)` : le point se déplace vers la droite ;
+- remplace `(255, 0, 0)` par `(0, 0, 255)` : le point devient bleu.
+#### Étape 2 : tracer une ligne
+ 
+Remplace ton code par celui-ci et exécute :
+ 
 ```python
 for x in range(200):
-    print(x)
+    mosaique.putpixel((x, 50), (255, 0, 0))
 ```
-
-Cette boucle affiche 0, puis 1, puis 2... jusqu'à 199. À chaque tour, la variable `x` prend la valeur suivante.
-
-Pour passer sur tous les pixels, il faut **deux boucles, l'une dans l'autre** : pour chaque colonne `x`, on parcourt toutes les lignes `y`.
-
+ 
+Une ligne rouge apparaît.
+ 
+**Ce qui se passe :** la ligne `for` **répète** l'instruction en dessous, 200 fois. À chaque fois, `x` augmente de 1 : 0, puis 1, puis 2... jusqu'à 199. Le pixel colorié avance donc d'un cran à chaque fois, et ça trace une ligne.
+ 
+::: alerte
+Le décalage vers la droite (l'**indentation**) est obligatoire : il montre ce qui est répété.
+:::
+ 
+**Essaie :**
+ 
+- remplace `range(200)` par `range(100)` : la ligne est deux fois plus courte ;
+- remplace le `50` par `150` : la ligne descend.
+**Et si on oublie `x` ?** Remplace `(x, 50)` par `(0, 0)` et exécute. On ne voit plus qu'un seul point dans le coin : l'ordinateur a colorié 200 fois **le même** pixel. Remets `(x, 50)`.
+ 
+::: alerte
+Dans une boucle, il faut écrire `x` (et `y`) dans les coordonnées, pas des nombres.
+:::
+ 
+#### Étape 3 : voir les coordonnées défiler
+ 
+Remplace ton code par celui-ci, exécute, puis clique sur **Console** :
+ 
+```python
+for x in range(3):
+    for y in range(3):
+        print(x, y)
+```
+ 
+**Ce qui se passe :** avec **deux boucles, l'une dans l'autre**, l'ordinateur passe par **toutes les coordonnées** : `0 0`, `0 1`, `0 2`, puis `1 0`, `1 1`, `1 2`... Colonne par colonne.
+ 
+**Essaie :** remplace les deux `3` par des `10`. La liste est beaucoup plus longue : l'ordinateur passe par les 100 pixels d'un carré de 10 × 10.
+ 
+#### Étape 4 : remplir un carré
+ 
+Remplace ton code par celui-ci, exécute, puis clique sur **Image** :
+ 
 ```python
 for x in range(200):
     for y in range(200):
-        # ici, on traite le pixel (x, y)
+        mosaique.putpixel((x, y), (255, 0, 0))
 ```
-
-::: alerte
-Le décalage vers la droite (l'**indentation**) est obligatoire : il indique ce qui est à l'intérieur de la boucle.
-:::
-
+ 
+Tout le carré en haut à gauche devient rouge.
+ 
+**Ce qui se passe :** les deux boucles passent par tous les pixels de `(0, 0)` à `(199, 199)`, et chacun est colorié en rouge. Ce carré, c'est exactement la place de l'original dans la mosaïque.
+ 
+**Essaie :** remplace `(255, 0, 0)` par `(0, 255, 0)` : le carré devient vert.
+ 
+#### Étape 5 : lire la couleur d'un pixel du portrait
+ 
+Il reste à remplacer le rouge par **la vraie couleur de chaque pixel du portrait**. Pour lire la couleur d'un pixel, on utilise `getpixel` :
+ 
+```python
+r, v, b = portrait.getpixel((x, y))
+```
+ 
+**Ce qui se passe :** la couleur du pixel `(x, y)` du portrait est faite de trois nombres, ses **composantes** : le rouge, le vert et le bleu. On les range dans trois boîtes appelées `r`, `v` et `b`, pour s'en servir juste après.
+ 
 #### À toi
-
-Complète ce code et place-le **au-dessus** de `mosaique.show()`. Exécute.
-
+ 
+Remplace ton code par celui-ci, complète les `...` et exécute.
+ 
 ```python
 # Partie 1 : copie de l'original (en haut à gauche)
-for x in range(...):
-    for y in range(...):
-        r, v, b = portrait.getpixel((..., ...))
-        mosaique.putpixel((..., ...), (r, v, b))
+for x in range(200):
+    for y in range(200):
+        r, v, b = portrait.getpixel((..., ...))    # on lit la couleur du pixel (x, y) du portrait
+        mosaique.putpixel((..., ...), (r, v, b))   # on l'écrit au même endroit dans la mosaïque
 ```
-
+ 
 Tu dois voir le portrait en haut à gauche de la mosaïque.
-
 ### Questions de compréhension
 
 **Question 4.** Ajoute la ligne `print(portrait.getpixel((0, 0)))` et exécute. Quelle est la couleur du pixel en haut à gauche ? Est-ce logique ?
@@ -163,7 +214,7 @@ Appelle le professeur pour faire valider ton travail.
 
 ## Fabriquer le négatif {#partie-2}
 
-**Ce qu'on va faire :** fabriquer le négatif du portrait, en haut à droite de la mosaïque.
+**Objectif :** fabriquer le négatif du portrait, en haut à droite de la mosaïque.
 
 ### Avant de coder
 
@@ -217,7 +268,7 @@ Appelle le professeur pour faire valider ton travail.
 
 ## Passer en niveaux de gris {#partie-3}
 
-**Ce qu'on va faire :** fabriquer la version en niveaux de gris du portrait, en bas à gauche.
+**Objectif :** fabriquer la version en niveaux de gris du portrait, en bas à gauche.
 
 ### Avant de coder
 
@@ -267,7 +318,7 @@ Appelle le professeur pour faire valider ton travail.
 
 ## Tracer les contours {#partie-4}
 
-**Ce qu'on va faire :** transformer le portrait en dessin au crayon, en bas à droite.
+**Objectif :** transformer le portrait en dessin au crayon, en bas à droite.
 
 ### Avant de coder
 
